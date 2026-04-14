@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HF-ICU mortality research web calculator</title>
+  <link rel="stylesheet" href="/static/site.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">Journal of Cardiac Failure submission support</p>
+      <h1>HF-ICU mortality research web calculator</h1>
+      <p class="lead">This Render-hosted research page runs the manuscript-aligned CatBoost model for first-day ICU risk review in critically ill patients with heart failure.</p>
+      <div class="metrics">
+        <article><span>External AUROC</span><strong>0.779</strong></article>
+        <article><span>External AUPRC</span><strong>0.461</strong></article>
+        <article><span>Brier score</span><strong>0.106</strong></article>
+        <article><span>Youden cutoff</span><strong>0.1111</strong></article>
+      </div>
+    </section>
+
+    <section class="grid">
+      <form id="risk-form" class="card input-card">
+        <div class="section-label">First-day ICU inputs</div>
+        <h2>Patient variables</h2>
+        <div id="inputs" class="inputs"></div>
+        <div class="buttons">
+          <button type="submit">Calculate risk</button>
+          <button type="button" id="reset">Reset defaults</button>
+        </div>
+      </form>
+
+      <aside class="card output-card">
+        <div class="section-label">Model result</div>
+        <h2>Estimated mortality risk</h2>
+        <div class="risk" id="risk-value">--</div>
+        <div class="pill" id="risk-group">Awaiting input</div>
+        <p id="threshold-note">Risk group uses the internal-validation Youden cutoff.</p>
+        <hr />
+        <h3>External benchmark AUROC</h3>
+        <div class="benchmarks">
+          <div><span>CatBoost</span><strong>0.779</strong></div>
+          <div><span>SOFA</span><strong>0.707</strong></div>
+          <div><span>GWTG-HF</span><strong>0.704</strong></div>
+          <div><span>ADHERE</span><strong>0.637</strong></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="card note-card">
+      <h2>Model scope</h2>
+      <p>The calculator accepts the 10 first-day variables retained in the manuscript model: age, sex, systolic blood pressure, mean arterial pressure, heart rate, oxygen saturation, blood urea nitrogen, creatinine, bicarbonate, and arterial pH. The page is intended for research review of the manuscript model and benchmark comparison.</p>
+    </section>
+  </main>
+  <script src="/static/site.js"></script>
+</body>
+</html>

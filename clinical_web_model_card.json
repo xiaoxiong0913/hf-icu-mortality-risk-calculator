@@ -1,0 +1,156 @@
+{
+  "title": "HF-ICU mortality research web calculator",
+  "short_title": "HF-ICU mortality calculator",
+  "target_journal": "Journal of Cardiac Failure",
+  "platform": "Render",
+  "model": {
+    "name": "CatBoost",
+    "feature_count": 10,
+    "runtime": "CatBoost model file loaded by Flask",
+    "outcome": "In-hospital mortality",
+    "time_window": "First ICU day",
+    "development": "eICU-CRD",
+    "external_evaluation": "MIMIC-IV"
+  },
+  "cohorts": {
+    "development_training": 11044,
+    "internal_validation": 4774,
+    "external_validation": 14877
+  },
+  "performance": {
+    "internal_validation": {
+      "auroc": 0.789,
+      "auprc": 0.409,
+      "brier": 0.093,
+      "youden_cutoff": 0.1111,
+      "sensitivity": 0.6917,
+      "specificity": 0.7171
+    },
+    "external_validation": {
+      "auroc": 0.779,
+      "auprc": 0.461,
+      "brier": 0.106,
+      "sensitivity_at_youden": 0.6754,
+      "specificity_at_youden": 0.702
+    },
+    "benchmarks_external_auroc": {
+      "SOFA": 0.707,
+      "GWTG-HF": 0.704,
+      "ADHERE": 0.637
+    }
+  },
+  "features": [
+    {
+      "key": "Age (years)",
+      "label": "Age",
+      "unit": "years",
+      "default": 71.0,
+      "step": "1",
+      "type": "number",
+      "options": []
+    },
+    {
+      "key": "Sex",
+      "label": "Sex",
+      "unit": "",
+      "default": 1.0,
+      "step": "1",
+      "type": "select",
+      "options": [
+        {
+          "label": "Female",
+          "value": 0
+        },
+        {
+          "label": "Male",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "key": "Mean systolic blood pressure in first 24 h (mmHg)",
+      "label": "Mean systolic blood pressure",
+      "unit": "mmHg",
+      "default": 117.4,
+      "step": "1",
+      "type": "number",
+      "options": []
+    },
+    {
+      "key": "Mean arterial pressure in first 24 h (mmHg)",
+      "label": "Mean arterial pressure",
+      "unit": "mmHg",
+      "default": 78.1,
+      "step": "1",
+      "type": "number",
+      "options": []
+    },
+    {
+      "key": "Mean heart rate in first 24 h (beats/min)",
+      "label": "Mean heart rate",
+      "unit": "beats/min",
+      "default": 83.5,
+      "step": "1",
+      "type": "number",
+      "options": []
+    },
+    {
+      "key": "Minimum peripheral oxygen saturation in first 24 h (%)",
+      "label": "Minimum peripheral oxygen saturation",
+      "unit": "%",
+      "default": 87.0,
+      "step": "1",
+      "type": "number",
+      "options": []
+    },
+    {
+      "key": "Maximum blood urea nitrogen in first 24 h (mg/dL)",
+      "label": "Maximum blood urea nitrogen",
+      "unit": "mg/dL",
+      "default": 30.0,
+      "step": "0.1",
+      "type": "number",
+      "options": []
+    },
+    {
+      "key": "Maximum serum creatinine in first 24 h (mg/dL)",
+      "label": "Maximum serum creatinine",
+      "unit": "mg/dL",
+      "default": 1.41,
+      "step": "0.1",
+      "type": "number",
+      "options": []
+    },
+    {
+      "key": "Minimum bicarbonate in first 24 h (mmol/L)",
+      "label": "Minimum bicarbonate",
+      "unit": "mmol/L",
+      "default": 25.0,
+      "step": "0.1",
+      "type": "number",
+      "options": []
+    },
+    {
+      "key": "Minimum arterial pH in first 24 h",
+      "label": "Minimum arterial pH",
+      "unit": "",
+      "default": 7.35,
+      "step": "0.01",
+      "type": "number",
+      "options": []
+    }
+  ],
+  "defaults": {
+    "Age (years)": 71.0,
+    "Sex": 1.0,
+    "Mean systolic blood pressure in first 24 h (mmHg)": 117.4,
+    "Mean arterial pressure in first 24 h (mmHg)": 78.1,
+    "Mean heart rate in first 24 h (beats/min)": 83.5,
+    "Minimum peripheral oxygen saturation in first 24 h (%)": 87.0,
+    "Maximum blood urea nitrogen in first 24 h (mg/dL)": 30.0,
+    "Maximum serum creatinine in first 24 h (mg/dL)": 1.41,
+    "Minimum bicarbonate in first 24 h (mmol/L)": 25.0,
+    "Minimum arterial pH in first 24 h": 7.35
+  },
+  "generated_at": "2026-04-14T20:01:04"
+}
