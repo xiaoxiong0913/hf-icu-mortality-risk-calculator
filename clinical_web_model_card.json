@@ -46,6 +46,8 @@
       "unit": "years",
       "default": 71.0,
       "step": "1",
+      "precision": 0,
+      "integer_only": true,
       "type": "number",
       "options": []
     },
@@ -55,6 +57,8 @@
       "unit": "",
       "default": 1.0,
       "step": "1",
+      "precision": 0,
+      "integer_only": true,
       "type": "select",
       "options": [
         {
@@ -72,7 +76,9 @@
       "label": "Mean systolic blood pressure",
       "unit": "mmHg",
       "default": 117.4,
-      "step": "1",
+      "step": "0.1",
+      "precision": 1,
+      "integer_only": false,
       "type": "number",
       "options": []
     },
@@ -81,7 +87,9 @@
       "label": "Mean arterial pressure",
       "unit": "mmHg",
       "default": 78.1,
-      "step": "1",
+      "step": "0.1",
+      "precision": 1,
+      "integer_only": false,
       "type": "number",
       "options": []
     },
@@ -90,7 +98,9 @@
       "label": "Mean heart rate",
       "unit": "beats/min",
       "default": 83.5,
-      "step": "1",
+      "step": "0.1",
+      "precision": 1,
+      "integer_only": false,
       "type": "number",
       "options": []
     },
@@ -100,6 +110,8 @@
       "unit": "%",
       "default": 87.0,
       "step": "1",
+      "precision": 0,
+      "integer_only": true,
       "type": "number",
       "options": []
     },
@@ -108,7 +120,9 @@
       "label": "Maximum blood urea nitrogen",
       "unit": "mg/dL",
       "default": 30.0,
-      "step": "0.1",
+      "step": "1",
+      "precision": 0,
+      "integer_only": true,
       "type": "number",
       "options": []
     },
@@ -117,7 +131,9 @@
       "label": "Maximum serum creatinine",
       "unit": "mg/dL",
       "default": 1.41,
-      "step": "0.1",
+      "step": "0.01",
+      "precision": 2,
+      "integer_only": false,
       "type": "number",
       "options": []
     },
@@ -127,6 +143,8 @@
       "unit": "mmol/L",
       "default": 25.0,
       "step": "0.1",
+      "precision": 1,
+      "integer_only": false,
       "type": "number",
       "options": []
     },
@@ -136,6 +154,8 @@
       "unit": "",
       "default": 7.35,
       "step": "0.01",
+      "precision": 2,
+      "integer_only": false,
       "type": "number",
       "options": []
     }
@@ -152,5 +172,5 @@
     "Minimum bicarbonate in first 24 h (mmol/L)": 25.0,
     "Minimum arterial pH in first 24 h": 7.35
   },
-  "generated_at": "2026-04-14T20:01:04"
+  "generated_at": "2026-04-15T15:18:57"
 }
